@@ -1,16 +1,16 @@
-# Kryptonian App
+# CelestialCode Auth/Authz Application
 
 ## Table of Contents
 
 - [Project Overview](#project-overview)
 - [Features Implemented](#features-implemented)
-- [API Endpoints](#api-endpoints)
+- [API Endpoints](#api-endpoint)
 - [Technologies Used](#technologies-used)
 - [Setup Instructions](#setup-instructions)
 
 ## Project Overview
 
-Kryptonian App is an application crafted by CelestialCoders to manage user authentication, incorporating Two-Factor Authentication (2FA) with One-Time Passwords (OTP), and secure file uploads. The application follows contemporary RESTful API design principles and utilizes various technologies to guarantee security and efficiency.
+The Kryptonian App is an application crafted by CelestialCoders to manage user authentication, incorporating Two-Factor Authentication (2FA) with One-Time Passwords (OTP), and secure file uploads. The application follows contemporary RESTful API design principles and utilizes various technologies to guarantee security and efficiency.
 
 ## Features Implemented
 
@@ -34,7 +34,7 @@ Kryptonian App is an application crafted by CelestialCoders to manage user authe
 3. **Image Access**:
    - Images can be accessed without authentication, as required.
 
-## API Endpoints
+## API Endpoint
 
 ### Base URL: `https://localhost:3000/`
 
@@ -59,24 +59,6 @@ Kryptonian App is an application crafted by CelestialCoders to manage user authe
     }
     ```
 
-- **Login**
-
-  - Logs in a user and sends an OTP to their email.
-  - `POST /auth/login`
-  - Request:
-    ```json
-    {
-    	"email": "user@example.com",
-    	"password": "yourpassword"
-    }
-    ```
-  - Response:
-    ```json
-    {
-    	"message": "Your OTP code is ${otp}"
-    }
-    ```
-
 - **Verify OTP**
 
   - Verifies the OTP and logs in the user.
@@ -85,14 +67,14 @@ Kryptonian App is an application crafted by CelestialCoders to manage user authe
   - Request:
     ```json
     {
-    	"email": "yours@email.com",
-    	"otp": "123456"
+    	"email": "example@email.com",
+    	"otp": "198876"
     }
     ```
   - Response:
     ```json
     {
-    	"message": "OTP verified, login successful"
+    	"message": "OTP verified"
     }
     ```
 
@@ -148,11 +130,11 @@ Kryptonian App is an application crafted by CelestialCoders to manage user authe
     {
     	"data": [
     		{
-    			"_id": "image_id_1",
+    			"_id": "image_id",
     			"base64": "base64_string_of_image1"
     		},
     		{
-    			"_id": "image_id_2",
+    			"_id": "image_id",
     			"base64": "base64_string_of_image2"
     		}
     	]
@@ -171,18 +153,6 @@ Kryptonian App is an application crafted by CelestialCoders to manage user authe
     	}
     }
     ```
-
-## Technologies Used
-
-- **Node.js**: JavaScript runtime.
-- **Express.js**: Web framework for Node.js.
-- **MongoDB**: NoSQL database.
-- **Mongoose**: ODM for MongoDB.
-- **Nodemailer**: Node.js module for sending emails.
-- **bcrypt.js**: Library for hashing passwords.
-- **jsonwebtoken**: Library for creating and verifying JWTs.
-- **multer**: Middleware for handling multipart/form-data.
-- **uuid**: Library for generating unique IDs (API keys).
 
 ## Setup Instructions
 
