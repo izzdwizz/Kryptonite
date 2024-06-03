@@ -1,35 +1,3 @@
-http://localhost:3000/api/auth/register
-{
-"email": ""
-}
-
-http://localhost:3000/api/auth/confirm-email?email=tsnmeca@gmail.com&token=621087
-
-http:localhost:3000/api/auth/login/
-{
-"email": ""
-}
-
-http://localhost:3000/api/auth/register
-/confirm-email
-
-http://localhost:3000/api-key/create
-{
-"apiKey": {
-"key": "your-api-key",
-"version": 1,
-"invalidated": false
-}
-}
-
-{
-"apiKey": {
-"key": "your-api-key",
-"version": 1,
-"invalidated": false
-}
-}
-
 # Kryptonian App
 
 ## Table of Contents
@@ -39,18 +7,17 @@ http://localhost:3000/api-key/create
 - [API Endpoints](#api-endpoints)
 - [Technologies Used](#technologies-used)
 - [Setup Instructions](#setup-instructions)
-- [Contributing](#contributing)
 
 ## Project Overview
 
-Kryptonian App is designed to handle user authentication, including Two-Factor Authentication (2FA) using One-Time Passwords (OTP), and secure file uploads. This application adheres to modern RESTful API design principles and leverages a variety of technologies to ensure security and efficiency.
+Kryptonian App is an application crafted by CelestialCoders to manage user authentication, incorporating Two-Factor Authentication (2FA) with One-Time Passwords (OTP), and secure file uploads. The application follows contemporary RESTful API design principles and utilizes various technologies to guarantee security and efficiency.
 
 ## Features Implemented
 
 1. **Kryptonian Registration and Authentication**:
 
-   - **User Registration**: Allows new users to register with an email and password.
-     - Sends a confirmation email "Thank you for registering".
+   - **User Registration**: Allows new users to register with merely an email address.
+     - Sends a confirmation email.
    - **User Login**: Authenticates users with email and password.
      - Checks if the user's email is confirmed before allowing login.
      - Generates an OTP and sends it to the user's email for successful login, also generates a temporary token.
@@ -149,6 +116,24 @@ Kryptonian App is designed to handle user authentication, including Two-Factor A
     ```json
     {
     	"message": "File uploaded"
+    }
+    ```
+
+#### API KEY Management
+
+- **Generate Key**
+
+  - Generates an API key on Request.
+  - `POST /api-key/create`
+
+  - Response:
+    ```json
+    {
+    	"apiKey": {
+    		"key": "your-api-key",
+    		"version": 1,
+    		"invalidated": false
+    	}
     }
     ```
 
